@@ -1,0 +1,60 @@
+import React, { useState } from 'react';
+import BarcodeScanner from 'react-qr-scanner';
+import Modal from './Model';
+import useSound from 'use-sound';
+
+import classes from './qr.css';
+
+const QRReader = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [data, setData] = useState(null);
+    const [barScan, setBarScan] = useState(false);
+
+    const [playAlert] = useSound(`${process.env.PUBLIC_URL}/assets/alert.wav`, {
+        volume: 0.25,
+    });
+
+    const handleBarcodeScan = (err, data) => {
+        if (err) console.error(err);
+        if (!data) return;
+        setData(data.text);
+        playAlert();
+    };
+
+    return (
+        <div className={classes.container}>
+            <button
+                className={classes.btn}
+                onClick={e => {
+                    e.preventDefault();
+                    setShowModal(true);
+                    setBarScan(true);
+                    setData(null);
+                }}
+            >
+                Scan QR or Barcode
+            </button>
+            {showModal && (
+                <Modal>
+                    <React.Fragment>
+                        <button
+                            className={classes.closeModal}
+                            onClick={() => setShowModal(false)}
+                        >
+                            X
+                        </button>
+                        {barScan && (
+                            <BarcodeScanner
+                                style={{ width: '90%', height: '70%' }}
+                                onUpdate={handleBarcodeScan}
+                            />
+                        )}
+                        {data && <div className={classes.result}>{data}</div>}
+                    </React.Fragment>
+                </Modal>
+            )}
+        </div>
+    );
+};
+
+export default QRReader;

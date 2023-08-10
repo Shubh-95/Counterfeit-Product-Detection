@@ -1,0 +1,19 @@
+.center {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-self: auto;
+}
+
+
+.centerr {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-self: auto;
+
+}
+
+.box {
+    margin-right: 5px;
+}

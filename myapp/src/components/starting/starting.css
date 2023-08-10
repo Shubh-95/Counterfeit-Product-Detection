@@ -1,0 +1,48 @@
+.header {
+    background-color: gray;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-width: 0px;
+
+}
+
+.header h1 {
+    color: rgb(228, 219, 210);
+    border-width: 0px;
+    outline: 0px;
+}
+
+.cards {
+    position: relative;
+}
+
+
+.A {
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 220px;
+}
+
+.B {
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.C {
+    position: relative;
+    display: inline-block;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.center1 {
+    align-items: center;
+    align-items: center;
+    position: center;
+    margin-top: 50px;
+    margin-left: 520px;
+}

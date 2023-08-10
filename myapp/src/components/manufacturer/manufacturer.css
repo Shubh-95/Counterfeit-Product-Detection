@@ -1,0 +1,23 @@
+.center {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 40vh;
+    align-self: auto;
+    margin-top: 100px;
+}
+
+
+.centerr {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 40vh;
+    align-self: auto;
+    margin-top: 100px;
+
+}
+
+.box {
+    margin-right: 5px;
+}
